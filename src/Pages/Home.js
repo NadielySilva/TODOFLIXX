@@ -9,6 +9,8 @@ import myRagnarokPoster from "../Assets/RagnarokPoster.jpg"
 import myUsAgainPoster from "../Assets/Us Again.jpg"
 import myMumiaPoster from "../Assets/A-Mumia.jpg"
 import myHobbitPoster from "../Assets/O Hobbit.jpg"
+import myOnePiecePoster from "../Assets/One Piece Stampede.jpg"
+import myWarofWorldsPoster from "../Assets/A Guerra dos Mundos.jpg"
 
 
 
@@ -197,14 +199,6 @@ export default class Home extends Component {
 
     movieList: [
       {
-        title: "Thor: Ragnarok",
-        overview: "Após anos afastado, Thor retorna para casa e descobre que seu pai, Odin, rei de Asgard, está desaparecido. Após encontrá-lo, ele toma conhecimento de sua irmã mais velha, Hela, a poderosa e implacável deusa da morte. Com o auxílio de Loki, ele enfrenta Hela, mas durante a batalha, Thor acaba preso em Sakaar, um planeta do outro lado do universo. Agora, ele precisa correr contra o tempo para voltar a Asgard e impedir o Ragnarok, a destruição de seu mundo.",
-        poster: myRagnarokPoster,
-        parental_rating: true,
-        rating: "8.6",
-        run_time: "2h 10m"
-      },
-      {
         title: "Juntos Novamente",
         overview: "Traduzido do inglês-Us Again é um curta-metragem de animação 3D americano de 2021 dirigido e escrito por Zach Parrish e distribuído pela Walt Disney Studios Motion Pictures. Segue Art, um velho rabugento, e Dot, sua enérgica esposa, em uma vibrante cidade de dança.",
         poster: myUsAgainPoster,
@@ -227,6 +221,22 @@ export default class Home extends Component {
         parental_rating: true,
         rating: "7.9",
         run_time: "2h 41m"
+      },
+      {
+        title: "One Piece: Stampede",
+        overview: "One Piece: Stampede é um filme japonês de animação e aventura de 2019 dirigido por Takashi Otsuka e produzido pela Toei Animation. É o décimo quarto longa-metragem da série One Piece, baseado no manga de mesmo nome escrito e ilustrado por Eiichiro Oda, e comemora os 20 anos do anime.",
+        poster: myOnePiecePoster,
+        parental_rating: false,
+        rating: "9.1",
+        run_time: "1h 41m"
+      },
+      {
+        title: "A Guerra dos Mundos",
+        overview: "Os cientistas Clayton Forrester e Sylvia Van Buren são os primeiros a chegar no local onde caiu um meteorito. Logo depois, uma máquina alienígena aparece e começa uma matança aleatória. Fuzileiros navais são enviados para o local, porém as forças de ataque deles não está a altura da força de ataque dos alienígenas.",
+        poster: myWarofWorldsPoster,
+        parental_rating: false,
+        rating: "7.7",
+        run_time: "1h 25m"
       },
     ]
   };

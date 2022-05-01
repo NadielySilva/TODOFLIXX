@@ -122,7 +122,7 @@ const Like = styled.img`
 const Overview = styled.div`
   font-size: 12px;
   width: 22vw;
-  height: 14.5vh;
+  height: 14vh;
   overflow: hidden;
 `;
 
@@ -266,12 +266,8 @@ export default class All extends Component {
       //   rating: "",
       //   run_time: ""
       // },
-    ],
-
-    addMovies:[]
-
-    
-  }
+    ], 
+  };
 
   render() {
     return (
