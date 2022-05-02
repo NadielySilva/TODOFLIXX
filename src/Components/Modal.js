@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import ReactModal from 'react-modal';
+import ReactStars from "react-rating-stars-component";
 import styled from "styled-components";
 
 //IMPORTING ASSETS
 import myCloseIcon from "../Assets/+.svg"
 import myImageIcon from "../Assets/Mask Group 1.svg"
 
-const Container = styled.div`
+const Container = styled.form`
     font-family: 'Poppins', sans-serif;
+    color: #fff;
     width: 100%;
     height: 100%;
     display: flex;
@@ -38,6 +40,7 @@ const CloseBtn = styled.button`
         width: 95%;
         height: 90%;
     }
+
 `;
 
 const AddBtn = styled.button`
@@ -47,10 +50,6 @@ const AddBtn = styled.button`
   border: none;
   border-radius: 5px;
   background-color: #E71B27;
-
-  &:hover{
-    cursor:pointer;
-  }
 `;
 
 const Info = styled.div`
@@ -70,6 +69,7 @@ const InfoLabel = styled.label`
   justify-content: space-between;
 
   input{
+      color: #fff;
       width: 100%;
       height: 5vh;
       border: none;
@@ -82,7 +82,8 @@ const OverviewLabel = styled(InfoLabel)`
     margin-top: 5px;
 
     input{
-    height: 13.25vh;
+        color: #fff;
+        height: 13.25vh;
     }
 
     p{
@@ -100,10 +101,9 @@ const Media = styled.div`
     flex-direction: column;
     justify-content: space-between;
     margin-top: 10px;
-    background-color: purple;
 `;
 
-const MediaLabel = styled.label`
+const Label = styled.label`
     width: 100%;
     height: 10%;
 `;
@@ -123,11 +123,94 @@ const InputFile = styled.input`
 `;
 
 const Status = styled.div`
+    font-size: 0.75rem;
     width: 100%;
     height: 38%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     margin-top: 10px;
-    background-color: purple;
 `;
+
+const RadioContainer = styled.div`
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+`;
+
+const FormControl = styled.label`
+    font-size: 0.75rem;
+    line-height: 0.375rem;
+    width: 13vw;
+    display: flex;
+    align-items: center;
+`;
+
+const RadioBtn = styled.input`
+    font: inherit;
+    color: currentColor;
+    width: 0.75em;
+    height: 0.75em;
+    display: grid;
+    place-content: center;
+    appearance: none;
+    border: 0.15em solid #B1B1B1;
+    border-radius: 50%;
+    margin: 2%;
+    transform: translateY(-0.075em);
+    background-color: transparent;
+    
+    ::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em #B1B1B1;
+    }
+
+    &:checked::before {
+        transform: scale(1);
+    }
+    
+    &:hover{
+        cursor: pointer;
+    }
+    
+`;
+
+const RatingContainer = styled.div`
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+`;
+
+const ModalBtn = styled(AddBtn)`
+    margin: 0.5vh 1vw;
+`;
+
+const CancelAction = styled(AddBtn)`
+    margin: 0.5vh 1vw;
+    background-color: transparent;
+`;
+
+const ButtonsContainer = styled.div`
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+const ratingChanged = (newRating) => {
+    console.log(newRating);
+};
 
 export default class ModalAdd extends Component {
 
@@ -147,7 +230,7 @@ export default class ModalAdd extends Component {
 
     handleCloseModal() {
         this.setState({ showModal: false })
-    }
+    };
 
     render() {
         return (
@@ -197,15 +280,43 @@ export default class ModalAdd extends Component {
                             </OverviewLabel>
                         </Info>
                         <Media>
-                            <MediaLabel>
+                            <Label>
                                 Imagem de Capa
-                            </MediaLabel>
+                            </Label>
                             <Poster src={myImageIcon} alt="Escolha um poster" />
-                            <InputFile type="file"  accept="image/*, video/*" />
+                            <InputFile type="file" accept="image/*, video/*" />
                         </Media>
                         <Status>
 
+                            <Label>Status</Label>
+                            <RadioContainer>
+                                <FormControl class="form-control">
+                                    <RadioBtn type="radio" name="radio" />
+                                    Já assisti
+                                </FormControl>
+
+                                <FormControl class="form-control">
+                                    <RadioBtn type="radio" name="radio" />
+                                    Ainda não assisti
+                                </FormControl>
+                            </RadioContainer>
+                            <RatingContainer>
+                                <Label>Nota</Label>
+                                <ReactStars
+                                    count={5}
+                                    onChange={ratingChanged}
+                                    size={36}
+                                    isHalf={true}
+                                    char="✩"
+                                    activeColor="#E71B27"
+                                />
+                                <p><small>(0/5)</small></p>
+                            </RatingContainer>
                         </Status>
+                        <ButtonsContainer>
+                            <CancelAction onClick={this.handleCloseModal}>Cancelar</CancelAction>
+                            <ModalBtn type="submit">Confirmar</ModalBtn>
+                        </ButtonsContainer>
                     </Container>
                 </ReactModal>
             </>

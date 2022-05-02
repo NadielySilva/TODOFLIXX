@@ -7,6 +7,7 @@ import {
   Routes,
   Route
 } from "react-router-dom"
+import ReactStars from "react-rating-stars-component";
 
 //IMPORTING COMPONENTS
 import Home from "./Pages/Home";
@@ -41,6 +42,7 @@ import myMateOuMorra from "./Assets/Mate ou Morra.jpeg"
 import myGuardioesdaGalacia from "./Assets/Guardiões da Galáxia Vol 2.jpg"
 
 
+
 //FONTS CSS RULES
 // font-family: 'Bebas Neue', cursive;
 // font-family: 'Poppins', sans-serif;
@@ -56,6 +58,12 @@ const GlobalStyle = createGlobalStyle`
   html{
     color: #fff;
     background-color: #000;
+  }
+
+  button{    
+    &:hover{
+      cursor: pointer;
+  }
   }
 `;
 
@@ -397,6 +405,7 @@ export default class Todoflix extends Component {
     }
   };
 
+
   render() {
     return (
       <Container>
@@ -435,11 +444,7 @@ export default class Todoflix extends Component {
                 <SearchBox>
                   <SearchIcon><img src={mySearchIcon} alt="Botão buscar" /></SearchIcon>
                   <Search type = "search" placeholder="Busque aqui">
-                    {/* <>                    
-                    {this.state.filterMovies.map((item) => {
-                      <ul>{item}</ul>
-                    })}
-                    </> */}
+                    
                   </Search>              
                 </SearchBox>
               <LoginContainer>
