@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
 import ReactModal from 'react-modal';
 import ReactStars from "react-rating-stars-component";
 import styled from "styled-components";
@@ -170,7 +170,7 @@ const RadioBtn = styled.input`
         border-radius: 50%;
         transform: scale(0);
         transition: 120ms transform ease-in-out;
-        box-shadow: inset 1em 1em #B1B1B1;
+        box-shadow: inset 1em 1em #E71B27;
     }
 
     &:checked::before {
@@ -212,6 +212,11 @@ const ratingChanged = (newRating) => {
     console.log(newRating);
 };
 
+function handleSubmit(e, props) {
+    e.preventDefault();
+    props.addTask("Filme adicionado com sucesso!");
+}
+
 export default class ModalAdd extends Component {
 
     constructor() {
@@ -231,7 +236,7 @@ export default class ModalAdd extends Component {
     handleCloseModal() {
         this.setState({ showModal: false })
     };
-
+    
     render() {
         return (
             <>
@@ -264,7 +269,7 @@ export default class ModalAdd extends Component {
                         }
                     }}
                 >
-                    <Container>
+                    <Container onSubmit={handleSubmit}>
                         <ModalTitle>
                             <h3>Adicionar Filmes</h3>
                             <CloseBtn onClick={this.handleCloseModal}><img src={myCloseIcon} alt="Botão 'fechar'" /></CloseBtn>
@@ -314,8 +319,13 @@ export default class ModalAdd extends Component {
                             </RatingContainer>
                         </Status>
                         <ButtonsContainer>
-                            <CancelAction onClick={this.handleCloseModal}>Cancelar</CancelAction>
-                            <ModalBtn type="submit">Confirmar</ModalBtn>
+                            <CancelAction>Cancelar</CancelAction>
+                            <ModalBtn 
+                                type="submit"
+                                onClick={this.handleCloseModal}
+                            >
+                                Confirmar
+                            </ModalBtn>
                         </ButtonsContainer>
                     </Container>
                 </ReactModal>

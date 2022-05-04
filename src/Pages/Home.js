@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Carousel from "nuka-carousel";
 
 //IMPORTING ASSETS
+import mySearchIcon from "../Assets/Search.svg"
 import myFavIcon from "../Assets/FavoriteIcon.svg"
 import myLikeIcon from "../Assets/ThumbsUp.svg"
 import myRagnarokPoster from "../Assets/RagnarokPoster.jpg"
@@ -19,6 +20,41 @@ const Container = styled.div`
   width: 100%;
   padding-right: 18px;
   padding-left: 18px;
+`;
+const SearchBox = styled.label`
+  width: 32vw;
+  height: 4.5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 1.75vh;
+  left: 58vw;
+  border-radius: 5px;
+  background-color: #2C2C2C;
+`;
+
+const SearchIcon = styled.button`
+  width: 3vw;
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+
+  &:hover{
+    cursor: pointer;
+  }
+`;
+
+const Search = styled.input`
+  color: #fff;
+  placeholder: #fff;
+  width: 28vw;
+  height: 4vh;
+  border: none;
+  background-color: transparent;
 `;
 
 const StandAlone = styled.div`
@@ -244,6 +280,10 @@ export default class Home extends Component {
   render() {
     return (
       <Container>
+        <SearchBox>
+            <SearchIcon><img src={mySearchIcon} alt="Botão buscar" /></SearchIcon>
+            <Search type="search" placeholder="Busque aqui" />
+          </SearchBox>
         <StandAlone>
           {this.state.standAlone.map((item) => (
             <>

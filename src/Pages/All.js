@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 
 //IMPORTING ASSETS
+import mySearchIcon from "../Assets/Search.svg"
 import myFavIcon from "../Assets/FavoriteIcon.svg"
 import myLikeIcon from "../Assets/ThumbsUp.svg"
 import myRagnarokPoster from "../Assets/RagnarokPoster.jpg"
@@ -34,6 +35,42 @@ const Container = styled.div`
   padding-right: 18px;
   padding-left: 18px;
   padding-top: 18px;
+`;
+
+const SearchBox = styled.label`
+  width: 32vw;
+  height: 4.5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 1.75vh;
+  left: 58vw;
+  border-radius: 5px;
+  background-color: #2C2C2C;
+`;
+
+const SearchIcon = styled.button`
+  width: 3vw;
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+
+  &:hover{
+    cursor: pointer;
+  }
+`;
+
+const Search = styled.input`
+  color: #fff;
+  placeholder: #fff;
+  width: 28vw;
+  height: 4vh;
+  border: none;
+  background-color: transparent;
 `;
 
 const Card = styled.div`
@@ -266,12 +303,42 @@ export default class All extends Component {
       //   rating: "",
       //   run_time: ""
       // },
-    ], 
+    ],
+
+    filterMovies: [],    
+  };
+
+  filter = (event) => {
+    let {allMovies} = this.state;
+
+    const filtering = allMovies.filter((item) => {
+      if (item.toLowerCase().includes(event.target.value.toLowerCase())){
+        return true;
+      }
+    });
+
+    this.setState({filterMovies: filtering});
+
+    if (event.target.value === ""){
+      this.setState({filterMovies: allMovies});
+    }
   };
 
   render() {
+    let {filter} = this
+    let {allMovies, filterMovies} = this.state;
+
     return (
       <Container>
+        <SearchBox>
+          <SearchIcon><img src={mySearchIcon} alt="Botão buscar" /></SearchIcon>
+          <Search type="search" placeholder="Busque aqui" value= {allMovies} onChange={filter} />
+            <>
+            {filterMovies.map((item) => {
+              <ul>{item}</ul>
+            })}
+            </>
+        </SearchBox>
         {this.state.allMovies.map((item) => (
           <Card>
             <PosterContainer>
