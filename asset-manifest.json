@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e6c13ad2.css",
+    "main.js": "/static/js/main.43c2b589.js",
+    "static/js/787.fedb6192.chunk.js": "/static/js/787.fedb6192.chunk.js",
+    "static/media/Mate ou Morra.jpeg": "/static/media/Mate ou Morra.338ac45093ca8b382911.jpeg",
+    "static/media/Come Play.jpg": "/static/media/Come Play.3817dbda28a35054790e.jpg",
+    "static/media/Guardiões da Galáxia Vol 2.jpg": "/static/media/Guardiões da Galáxia Vol 2.2f2b9da36551674eaeac.jpg",
+    "static/media/Us Again.jpg": "/static/media/Us Again.a53b7beb2f66a132493f.jpg",
+    "static/media/Dragon Ball.jpg": "/static/media/Dragon Ball.aee6af93a575ad19bdbe.jpg",
+    "static/media/Lolita.jpg": "/static/media/Lolita.bbf401eb5fb1ad4b0a2e.jpg",
+    "static/media/A Guerra dos Mundos.jpg": "/static/media/A Guerra dos Mundos.1f8518d32abea92d10d9.jpg",
+    "static/media/O Hobbit.jpg": "/static/media/O Hobbit.2ce67f3d89623170d654.jpg",
+    "static/media/A-Mumia.jpg": "/static/media/A-Mumia.53a11fc98b8cc3b1704f.jpg",
+    "static/media/Dois Irmaõs.jpg": "/static/media/Dois Irmaõs.74a8858fabe5b7c22e83.jpg",
+    "static/media/Lucas Ant Bully.jpg": "/static/media/Lucas Ant Bully.1a8ce1bd8ae5b374caba.jpg",
+    "static/media/One Piece Stampede.jpg": "/static/media/One Piece Stampede.e40dcb8ea75d944ca634.jpg",
+    "static/media/WiFi Ralph.jpg": "/static/media/WiFi Ralph.418da949c8720a976657.jpg",
+    "static/media/RagnarokPoster.jpg": "/static/media/RagnarokPoster.a28d4ea5df5929b4b315.jpg",
+    "static/media/O Homem Que Desafiou o Diabo.jpg": "/static/media/O Homem Que Desafiou o Diabo.f86f626b1cc0e3ab67ae.jpg",
+    "index.html": "/index.html",
+    "static/media/userIcon.svg": "/static/media/userIcon.a26b9c3c15e359fc6627a61b1b1386b1.svg",
+    "static/media/Search.svg": "/static/media/Search.a20389f492c95705173d8b2d061e5e95.svg",
+    "static/media/ThumbsUp.svg": "/static/media/ThumbsUp.19da268425db7dab09bed4a8c23e0cb3.svg",
+    "static/media/FavoriteIcon.svg": "/static/media/FavoriteIcon.9aee64657fb7d48c351d45dd0be7c986.svg",
+    "static/media/Down Arrow.svg": "/static/media/Down Arrow.cd8e5e53fa8ef53e5c1759162bfda247.svg",
+    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
+    "main.43c2b589.js.map": "/static/js/main.43c2b589.js.map",
+    "787.fedb6192.chunk.js.map": "/static/js/787.fedb6192.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.43c2b589.js"
+  ]
+}
